@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stage_projet/pages/singup/completeYourSingup.dart';
+import 'package:stage_projet/pages/profile/profile.dart';
+import 'package:stage_projet/pages/widgetComponents/appBarPagesSingup.dart';
+import 'package:stage_projet/pages/widgetComponents/myBackButton.dart';
+import 'package:stage_projet/pages/widgetComponents/otherComponents.dart';
 
 class Singup extends StatelessWidget {
   const Singup({super.key});
@@ -11,37 +14,117 @@ class Singup extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      appBar: getAppBarPagesSingup(context),
       body: Container(
-          padding: const EdgeInsets.only(
-            top: 11,
-            right: 20,
-            bottom: 11,
-            left: 20,
+        height: double.infinity,
+          padding: EdgeInsets.only(
+            top: screenHeight * 0.02,
+            right: (screenWidth * 5)/100,
+            left: (screenWidth * 5)/100,
           ),
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-            colors: [Color(0xffd4e2f9), Color(0xffffffff)],
-            stops: [0.01, 0.25],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          )),
+          decoration: Othercomponents.boxDecorationPagesSingup,
           child: SafeArea(
             child: Container(
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 5,),
-                  // Creation bouton retour
-                  Container(
-                    width: 45,
-                    height: 45,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(color: Colors.black54)),
-                    child: BackButton(onPressed: () {}),
+                  // const SizedBox(height: 5,),
+                  //
+                  // const MybackButton(),
+
+                  SizedBox(height: (screenHeight * 4.6) / 100,),
+
+                  const Text("Sign up",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24
+                    ),
                   ),
 
+                  SizedBox(height: (screenHeight * 4.6) / 100,),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text("login with phone number",
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black,
+                        ),),
+                      Container(
+                        //color: Colors.lightGreen,
+                        width: double.infinity,
+                        height: 60,
+                        padding: const EdgeInsets.fromLTRB(2, 5, 10, 5),
+                        alignment: Alignment.centerLeft,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                              contentPadding: EdgeInsets.only(left: 28, top: 12, right: 28, bottom: 12),
+                              border: const OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                      Radius.circular(17.0)
+                                  )
+                              ),
+                              icon: Container(
+                                width: 74,
+                                height: double.infinity,
+                                alignment: Alignment.center,
+                                padding: const EdgeInsets.all(6),
+                                decoration: BoxDecoration(
+                                    color: const Color(0xffd0dffa),
+                                    borderRadius: BorderRadius.circular(17.0)
+                                ),
+                                child: const Text('🇨🇲+237'),
+                              )
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+
+                  SizedBox(height: (screenHeight * 4.6) / 100,),
+
+                  Container(
+                    width: double.infinity,
+                    height: 60,
+                    padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                    alignment: Alignment.centerLeft,
+                    // Creation du bouton continuer
+                    child: TextButton(
+                      onPressed: () {
+                        showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return getModalBottomSheet(context);
+                            });
+                      },
+                      style: TextButton.styleFrom(
+                          backgroundColor: Colors.blue
+                      ),
+                      child: Container(
+                        width: double.infinity,
+                        height: 30,
+                        alignment: Alignment.center,
+                        child: const Text("Continue",),
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(height: (screenHeight * 4.6) / 100,),
+
+                  const Text('By signing up you agree to the. terms of service and'
+                      'Privacy Policy including Cookie Use',
+                    textAlign: TextAlign.center,
+                    style:TextStyle(
+                      fontSize: 12,
+                      color: Colors.black45,
+                    ),
+                  ),
+
+                  // Creation bouton retour
                 ],
               ),
             ),
@@ -49,18 +132,7 @@ class Singup extends StatelessWidget {
     );
   }
 
-  AppBar getAppBar(BuildContext context) {
-    return AppBar(
-      leading: Container(
-        margin: const EdgeInsetsDirectional.fromSTEB(12, 12, 0, 0),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            border: Border.all(color: Colors.black54)),
-        child: BackButton(onPressed: () {}),
-      ),
-      backgroundColor: const Color(0xffd0dffa),
-    );
-  }
+
 
   Widget getModalBottomSheet(BuildContext context) {
     return Container(
@@ -93,7 +165,7 @@ class Singup extends StatelessWidget {
           TextButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: ((context) => CompleteYourSingup())));
+                  builder: ((context) => Profile())));
             },
             style: TextButton.styleFrom(backgroundColor: Colors.blue),
             child: Container(

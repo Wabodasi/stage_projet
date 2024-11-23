@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stage_projet/pages/singup/completeYourSingup.dart';
-import 'package:stage_projet/pages/singup/pickProfilePicture.dart';
+import 'package:stage_projet/pages/profile/profile.dart';
+import 'package:stage_projet/pages/avatar/avatar.dart';
 import 'package:stage_projet/pages/singup/singup.dart';
-import 'package:stage_projet/pages/singup/specifyUserName.dart';
+import 'package:stage_projet/pages/profileUsername/profileUsername.dart';
 
 void main() {
   runApp(const MyApp());
