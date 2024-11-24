@@ -9,9 +9,10 @@ AppBar getAppBarPagesSingup(BuildContext context) {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             border: Border.all(color: Colors.black54)),
-        child: const Padding(
-          padding: EdgeInsets.only(left: 6),
-          child: BackButton(),
+        child: const BackButton(
+          style: ButtonStyle(
+              padding: WidgetStatePropertyAll(EdgeInsets.only(left: 12))
+          ),
         )
     ),
     backgroundColor: const Color(0xffd4e2f9),

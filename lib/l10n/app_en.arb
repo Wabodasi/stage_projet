@@ -1,0 +1,16 @@
+{
+    "pageSingupMessage1": "login with phone number",
+    "pageSingupMessage2": "By signing up you agree to the. terms of service and Privacy Policy including Cookie Use",
+    "titrePageSingup": "Sign up",
+    "textContinue": "Continue",
+    "confirm": "Confirm",
+    "pageSingupMessage3": "Is you phone number correct ?",
+    "pageSingupMessage4": "Med Prepa will send a verification code to you phone number.",
+    "setYourLanguage": "Set your language",
+    "titrePageProfile": "Complete your singup",
+
+    "name": "Name",
+    "specialty": "specialty",
+    "pageProfileMessage1": "You'll need a password",
+    "pageProfileMessage2": "Make sur it's 8 characters or more"
+}

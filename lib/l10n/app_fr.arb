@@ -1,0 +1,17 @@
+{
+    "pageSingupMessage1":"connectez vous avec un numéro de téléphone",
+    "pageSingupMessage2":"En vous inscrivant, vous acceptez le. conditions d'utilisation et politique de confidentialité, y compris l'utilisation des cookies",
+    "titrePageSingup": "S'inscrire",
+    "textContinue": "Continuer",
+    "confirm": "Confirmer",
+    "pageSingupMessage3": "Votre numéro de téléphone est-il correct ?",
+    "pageSingupMessage4": "Med Prepa enverra un code de vérification à votre numéro de téléphone.",
+    "setYourLanguage": "Définissez votre langue",
+    "titrePageProfile": "Complétez inscription",
+
+    "name": "Nom",
+    "specialty": "spécialité",
+    "pageProfileMessage1": "Vous aurez besoin d'un mot de passe",
+    "pageProfileMessage2": "Entrer 8 caractères ou plus"
+
+}

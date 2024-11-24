@@ -4,6 +4,7 @@ import 'package:stage_projet/pages/widgetComponents/appBarPagesSingup.dart';
 import 'package:stage_projet/pages/widgetComponents/myBackButton.dart';
 import 'package:stage_projet/pages/widgetComponents/otherComponents.dart';
 import 'package:stage_projet/pages/widgetComponents/textFormFieldPagesSingup.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Profile extends StatefulWidget{
   const Profile({super.key});
@@ -41,8 +42,8 @@ class _ProfileState extends State<Profile> {
 
                     SizedBox(height: (screenHeight * 3.7) / 100,),
 
-                    const Text("Complete your singup",
-                      style: TextStyle(
+                    Text(AppLocalizations.of(context)!.titrePageProfile,
+                      style: const TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 24
                       ),
@@ -51,7 +52,7 @@ class _ProfileState extends State<Profile> {
                     SizedBox(height: (screenHeight * 3.7) / 100,),
 
                     TextFormFieldPagesSingUp(
-                      title: "Name",
+                      title: AppLocalizations.of(context)!.name,
                       width: (screenWidth * 90)/100,
                       height: (screenHeight * 10)/100,
                     ),
@@ -59,7 +60,7 @@ class _ProfileState extends State<Profile> {
                     SizedBox(height: (screenHeight * 3.7) / 100,),
 
                     TextFormFieldPagesSingUp(
-                      title: "Specialty",
+                      title: AppLocalizations.of(context)!.specialty,
                       width: (screenWidth * 90)/100,
                       height: (screenHeight * 10)/100,
                     ),
@@ -71,7 +72,7 @@ class _ProfileState extends State<Profile> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text('You need a password',
+                          Text(AppLocalizations.of(context)!.pageProfileMessage1,
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 17
@@ -80,7 +81,7 @@ class _ProfileState extends State<Profile> {
                           const SizedBox(
                             height: 7,
                           ),
-                          const Text("Make sur it's 8 characters or more",
+                          Text(AppLocalizations.of(context)!.pageProfileMessage2,
                             style: TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 17,
@@ -130,7 +131,7 @@ class _ProfileState extends State<Profile> {
                           width: (screenWidth * 90)/100,
                           height: (screenHeight * 4)/100,
                           alignment: Alignment.center,
-                          child: const Text("Continue",),
+                          child: Text(AppLocalizations.of(context)!.textContinue),
                         ),
                       ),
                     ),

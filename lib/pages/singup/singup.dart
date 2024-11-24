@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stage_projet/pages/profile/profile.dart';
 import 'package:stage_projet/pages/widgetComponents/appBarPagesSingup.dart';
-import 'package:stage_projet/pages/widgetComponents/myBackButton.dart';
 import 'package:stage_projet/pages/widgetComponents/otherComponents.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Singup extends StatelessWidget {
   const Singup({super.key});
@@ -35,10 +36,11 @@ class Singup extends StatelessWidget {
 
                   SizedBox(height: (screenHeight * 4.6) / 100,),
 
-                  const Text("Sign up",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24
+                  Text(
+                    AppLocalizations.of(context)!.titrePageSingup,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 24
                     ),
                   ),
 
@@ -47,8 +49,9 @@ class Singup extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text("login with phone number",
-                        style: TextStyle(
+                      Text(
+                        AppLocalizations.of(context)!.pageSingupMessage1,
+                        style: const TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
@@ -71,12 +74,23 @@ class Singup extends StatelessWidget {
                                 width: 74,
                                 height: double.infinity,
                                 alignment: Alignment.center,
-                                padding: const EdgeInsets.all(6),
+                                padding: const EdgeInsets.all(7),
                                 decoration: BoxDecoration(
                                     color: const Color(0xffd0dffa),
                                     borderRadius: BorderRadius.circular(17.0)
                                 ),
-                                child: const Text('🇨🇲+237'),
+                                child: Row(
+                                  children: [
+                                    SvgPicture.asset("assets/images/drapeau.svg",
+                                      height: 13,
+                                    ),
+                                    const Text("+237",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold
+                                      ),
+                                    )
+                                  ],
+                                )
                               )
                           ),
                         ),
@@ -108,17 +122,17 @@ class Singup extends StatelessWidget {
                         width: double.infinity,
                         height: 30,
                         alignment: Alignment.center,
-                        child: const Text("Continue",),
+                        child: Text(AppLocalizations.of(context)!.textContinue),
                       ),
                     ),
                   ),
 
                   SizedBox(height: (screenHeight * 4.6) / 100,),
 
-                  const Text('By signing up you agree to the. terms of service and'
-                      'Privacy Policy including Cookie Use',
+                  Text(
+                    AppLocalizations.of(context)!.pageSingupMessage2,
                     textAlign: TextAlign.center,
-                    style:TextStyle(
+                    style:const TextStyle(
                       fontSize: 12,
                       color: Colors.black45,
                     ),
@@ -148,8 +162,8 @@ class Singup extends StatelessWidget {
           Container(
             width: 250,
             margin: const EdgeInsets.fromLTRB(0, 60, 0, 30),
-            child: const Text(
-              'Is you phone number correct ?',
+            child: Text(
+              AppLocalizations.of(context)!.pageSingupMessage3,
               style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
             ),
           ),
@@ -159,8 +173,7 @@ class Singup extends StatelessWidget {
               )),
           Container(
             margin: const EdgeInsets.fromLTRB(0, 40, 0, 40),
-            child: const Text(
-                'Med Prepa will send a verification code to you phone number.'),
+            child: Text(AppLocalizations.of(context)!.pageSingupMessage4),
           ),
           TextButton(
             onPressed: () {
@@ -171,8 +184,8 @@ class Singup extends StatelessWidget {
             child: Container(
               height: 30,
               alignment: Alignment.center,
-              child: const Text(
-                "Confirm",
+              child: Text(
+                AppLocalizations.of(context)!.confirm,
               ),
             ),
           )
